@@ -25,7 +25,13 @@ function tryRemoveFromArray(array,index) {
             newArray.push(array[arrayKey]);
         }
     }
-    return  newArray;
+    for (let i = 0; i < newArray.length; i++) {
+        array[i] = newArray[i];
+    }
+    if (index >=0 && index < array.length){
+        array.pop();
+    }
+    return  array;
 }
 console.log(points);
 console.log(tryRemoveFromArray(points, 2));
